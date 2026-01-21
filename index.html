@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PCM Excellence – Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_Version3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">PCM Excellence</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <h1>PCM Excellence – Online Tuition for Class 12 PCM</h1>
+    <p>Result-oriented coaching with strong conceptual clarity.</p>
+
+    <div id="welcome"></div>
+
+    <div class="cta-buttons">
+        <a href="courses.html" class="btn primary">View Courses</a>
+        <a href="contact.html" class="btn secondary">Enroll Now</a>
+    </div>
+</header>
+
+<footer>
+    <p>© 2025 PCM Excellence. All rights reserved.</p>
+</footer>
+
+<script>
+var isLoggedIn = localStorage.getItem("isLoggedIn");
+var username = localStorage.getItem("username");
+
+if (isLoggedIn === "true") {
+    document.getElementById("welcome").innerHTML =
+        "<h3>Welcome, " + username + "</h3>" +
+        "<button onclick='logout()'>Logout</button>";
+}
+
+function logout() {
+    localStorage.clear();
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

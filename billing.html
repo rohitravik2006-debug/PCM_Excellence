@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing – PCM Excellence</title>
+    <link rel="stylesheet" href="style_Version3.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">PCM Excellence</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+
+<section class="section">
+    <h2>Billing Details</h2>
+
+    <!-- Billing content -->
+    <div id="billDetails"></div>
+
+    <!-- Pay button -->
+    <button id="payBtn" style="display:none; margin-top:20px;">
+        Pay Now
+    </button>
+</section>
+
+<footer>
+    <p>PCM Excellence</p>
+    <p>Email: info@pcmexcellence.com | Phone: +91 96320 34644</p>
+    <p>© 2025 PCM Excellence. All rights reserved.</p>
+</footer>
+
+<script>
+const courses = JSON.parse(localStorage.getItem("courses")) || [];
+let total = 0;
+
+const billDiv = document.getElementById("billDetails");
+const payBtn = document.getElementById("payBtn");
+
+if (courses.length === 0) {
+    billDiv.innerHTML = "<p>No courses selected.</p>";
+} else {
+    let html = "<h3>Selected Courses</h3><ul>";
+
+    courses.forEach(course => {
+        html += "<li>" + course.name + " - ₹" + course.price + "</li>";
+        total += course.price;
+    });
+
+    html += "</ul><h3>Total Amount: ₹" + total + "</h3>";
+    billDiv.innerHTML = html;
+
+    // show pay button only if courses exist
+    payBtn.style.display = "inline-block";
+}
+
+// Pay button logic (demo)
+payBtn.addEventListener("click", function () {
+    alert("Payment successful! (Demo)");
+
+    // clear selected courses after payment
+    localStorage.removeItem("courses");
+
+    window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>

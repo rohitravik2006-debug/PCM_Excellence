@@ -1,1 +1,137 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
+body {
+    line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #0a3d62;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background: #dff0ff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* ===== CARD CONTAINER (IMPORTANT FIX) ===== */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    max-width: 1100px;     /* 🔥 KEY FIX */
+    margin: 30px auto;     /* 🔥 KEY FIX */
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== FACULTY ===== */
+.faculty-card img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* ===== FORMS ===== */
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    padding: 10px 20px;
+    background: #0a3d62;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #062c46;
+}
+
+/* ===== LOGIN ===== */
+.login-box {
+    width: 350px;
+    margin: 120px auto;
+    padding: 25px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
