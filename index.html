@@ -42,7 +42,9 @@
 var isLoggedIn = localStorage.getItem("isLoggedIn");
 var username = localStorage.getItem("username");
 
-if (isLoggedIn === "true") {
+if (isLoggedIn !== "true") {
+    window.location.href = "login.html";
+} else {
     document.getElementById("welcome").innerHTML =
         "<h3>Welcome, " + username + "</h3>" +
         "<button onclick='logout()'>Logout</button>";
@@ -53,6 +55,7 @@ function logout() {
     window.location.href = "login.html";
 }
 </script>
+
 
 </body>
 </html>
